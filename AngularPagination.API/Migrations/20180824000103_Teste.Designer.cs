@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AngularPagination.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20180823013813_Initial")]
-    partial class Initial
+    [Migration("20180824000103_Teste")]
+    partial class Teste
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
