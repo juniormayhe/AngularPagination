@@ -29,11 +29,11 @@ namespace AngularPagination.API
         public List<Recipient> GetUsers(RecipientParams recipientParams)
         {
             var recipients = new List<Recipient>();
-            //se pagina desejada > total de paginas	skip 20 e take proximos 20
-            //var recipients = getRecipients().Skip(recipientParams.PageNumber % recipientParams.PageSize == 0? 20: 0).Take(20); // tell current user sex to show opposite
+            
             using (var cnn = new SqlConnection(this.Configuration["ConnectionStrings:DefaultConnection"]))
             {
                 cnn.Open();
+                //equivalent to EF Skip and Take? We should benchmark it 
                 var cmd = new SqlCommand($@"SELECT recipientId, RecipientName, Email, IsValid, Unsubscribe
                                             FROM Recipients 
                                             ORDER BY {recipientParams.OrderBy}
