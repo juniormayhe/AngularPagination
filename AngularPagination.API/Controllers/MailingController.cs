@@ -20,7 +20,7 @@ namespace AngularPagination.API.Controllers
 
         // GET api/values
         [HttpGet]
-        public ActionResult<PagedList<Recipient>> Get([FromQuery] RecipientParams recipientParams)
+        public ActionResult<List<Recipient>> Get([FromQuery] RecipientParams recipientParams)
         {
             return repo.GetUsers(recipientParams);
         }
